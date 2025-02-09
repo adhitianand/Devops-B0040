@@ -1,0 +1,17 @@
+name: Azure DevOps Integration
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Use Azure CLI to interact with Azure DevOps
+        uses: azure/cli-action@v1
+        with:
+          azcliversion: '2.x'
